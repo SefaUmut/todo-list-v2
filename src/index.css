@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500&display=swap");
+
+:root {
+  --bg-color: #F2E5E5;
+  --alt-bg-color: #E8C4C4;
+  --font-color: #ffffff;
+  --alt-font-color: #222222;
+  --primary-color: #CE7777;
+  --secondary-color: #2B3A55;
+  --input-bg-color: #EFFFFD;
+  --title-color: #354259;
+}
+
+.dark {
+  --bg-color: #1B2430;
+  --alt-bg-color: #0000004d;
+  --font-color: #ffffff;
+  --alt-font-color: #ffffff;
+  --primary-color: #570A57;
+  --secondary-color: #816797;
+  --input-bg-color: #1B2430;
+  --title-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--font-color);
+  font-family: "Nunito", sans-serif;
+  padding: 100px 0;
+  position: relative;
+  font-size: 100%;
+  transition: all 0.3s linear;
+}
+
+.container {
+  width: 80%;
+  max-width: 900px;
+  padding: 30px;
+  margin: 0 auto;
+  background: var(--alt-bg-color);
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 20px 0px #00000045;
+}
+
+.container .head {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+  margin-bottom: 50px;
+}
+
+.container button {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 33%;
+  margin: auto;
+}
+
+.head input {
+  padding: 15px 25px;
+  outline: none;
+  border: none;
+  color: var(--alt-font-color);
+  background-color: var(--input-bg-color);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--font-color);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+.filter {
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.filter button.active {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.task-icons .custom-select button.active {
+  order: -1;
+  background-color: var(--primary-color);
+}
+
+.tasks-wrapper {
+  list-style: none;
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--font-color);
+}
+
+.task {
+  background-color: var(--secondary-color) !important;
+  padding: 4px 5px 5px 30px;
+  border-radius: 5px;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  text-align: left;
+  transition: all 0.5s ease;
+}
+
+.task p {
+  font-size: 1rem;
+  text-transform: capitalize;
+  flex: 1;
+}
+
+.task button {
+  background-color: transparent;
+  color: var(--alt-font-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.7s;
+}
+
+.task .task-icons button:hover {
+  color: var(--primary-color);
+  background-color: var(--alt-font-color);
+  opacity: 0.85;
+  border-radius: 5px;
+}
+
+.btn-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.head .title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--title-color);
+}
+
+.btn-info .icon {
+  width: 18px;
+  height: 14px;
+  margin-bottom: 2px;
+  fill: var(--font-color);
+}
+
+.task-icons {
+  display: flex;
+  gap: 5px;
+}
+
+button.btn-delete-all {
+  margin-top: 50px;
+  background-color: var(--primary-color);
+}
+
+.no-tasks {
+  color: var(--font-color);
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 0;
+  right: 40px;
+}
+
+.toggle-btn input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked+label:before {
+  transform: translateX(45px);
+  background-color: #8BBCCC;
+}
+
+label {
+  display: flex;
+  width: 80px;
+  height: 35px;
+  margin-top: 20px;
+  border: 1px solid #5C2E7E;
+  border-radius: 5px;
+  position: relative;
+  transition: transform .2s ease-in-out;
+  transform-origin: 50% 50%;
+  cursor: pointer;
+}
+
+label::before {
+  transition: transform .2s ease-in-out;
+  transition-delay: .2s;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #5C2E7E;
+  border-radius: 10%;
+  top: 7px;
+  left: 7px;
+}
+
+.custom-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.custom-select button {
+  background-color: transparent;
+  border: none;
+  color: var(--font-color);
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container .head {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tasks-wrapper {
+    padding: 0 5px;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .filter {
+    flex-direction: column;
+  }
+}
+
