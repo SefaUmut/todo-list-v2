@@ -5,6 +5,7 @@ Todo app.
 ## Demo
 
 - Demo hosted on Netlify:
+https://react-todo-appsefaumutsarikaya.netlify.app/
 ## Features
 
 - Dark mode
